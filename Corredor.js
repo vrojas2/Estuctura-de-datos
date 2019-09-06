@@ -11,10 +11,6 @@ class Corredor {
     get posicionLiebre() {
         return this._posicionLiebre;
     }
-
-    dado() {
-        return Math.floor(Math.random() * 100 + 1);
-    }
 }
 
 class Liebre extends Corredor {
@@ -46,7 +42,6 @@ export default class Tortuga extends Liebre {
         super(posicionTortuga, posicionLiebre);
     }
 
-   
     avanzaTortuga(dado) {
         if (dado >= 0 && dado <= 50) {
             this._posicionTortuga += 3;
