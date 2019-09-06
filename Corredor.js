@@ -17,26 +17,7 @@ class Corredor {
     }
 }
 
-export default class Tortuga extends Corredor {
-    constructor(posicionTortuga, posicionLiebre) {
-        super(posicionTortuga, posicionLiebre);
-    }
-
-   
-    avanzaTortuga(dado) {
-        if (dado >= 0 && dado <= 50) {
-            this._posicionTortuga += 3;
-        }
-        else if (dado >= 51 && dado <= 70) {
-            this._posicionTortuga -= 6;
-        }
-        else if (dado >= 71 && dado <= 100) {
-            this._posicionTortuga += 1;
-        }
-    }
-}
-
-class Liebre extends Tortuga {
+class Liebre extends Corredor {
     constructor(posicionTortuga, posicionLiebre) {
         super(posicionTortuga, posicionLiebre);
     }
@@ -56,6 +37,25 @@ class Liebre extends Tortuga {
         }
         else if (dado >= 86 && dado <= 100) {
             this._posicionLiebre -=2;
+        }
+    }
+}
+
+export default class Tortuga extends Liebre {
+    constructor(posicionTortuga, posicionLiebre) {
+        super(posicionTortuga, posicionLiebre);
+    }
+
+   
+    avanzaTortuga(dado) {
+        if (dado >= 0 && dado <= 50) {
+            this._posicionTortuga += 3;
+        }
+        else if (dado >= 51 && dado <= 70) {
+            this._posicionTortuga -= 6;
+        }
+        else if (dado >= 71 && dado <= 100) {
+            this._posicionTortuga += 1;
         }
     }
 }
